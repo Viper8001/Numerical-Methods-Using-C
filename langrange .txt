@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+main()
+{
+  float x[10],y[10],v,val=0,a;
+  int i,j,n;
+  printf("enter number of asrguments:- ");
+  scanf("%d",&n);
+  printf("ENTER THE VALUE OF X:- ");
+  for(i=0;i<n;i++)
+  scanf("%f",&x[i]);
+  printf("ENTER THE VALUE OF F(X):- ");
+  for(i=0;i<n;i++)
+  scanf("%f",&y[i]);
+  printf("THE VALUE OF X WHERE WE DETERMINE THE VALUE OF F(X):- ");
+  scanf("%f",&a);
+  for(i=0;i<n;i++)
+  {
+      v=y[i];
+      for(j=0;j<n;j++)
+      {
+
+        if(j!=i)
+            v=v*(a-x[j])/(x[i]-x[j]);
+      }
+      val=val+v;
+  }
+  printf("THE VALUE OF F(%f) is %f.",a,val);
+}

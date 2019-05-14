@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+float f(float x)
+{
+return((x*x*x)-(3*x)+1);
+}
+float g(float x)
+{
+return((3*x*x)-3);
+}
+main()
+{
+float x,a,e=0.000005;
+printf("ENTER THE INITIAL APPROXIMATION IS:- ");
+scanf("%f",&a);
+do
+{
+ x=a-(f(a)/g(a));
+ if(fabs(f(x)-f(a))<e)
+ {
+     break;
+ }
+ else
+    a=x;
+}
+while(1);
+printf("THE ROOT OF THE EQUATION IS %f",x);
+}
